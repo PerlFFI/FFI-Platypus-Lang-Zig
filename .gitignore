@@ -1,0 +1,5 @@
+FFI-Platypus-Lang-Zig-*
+/.build/
+*.swp
+
+
