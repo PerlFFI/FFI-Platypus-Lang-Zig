@@ -1,5 +1,6 @@
 FFI-Platypus-Lang-Zig-*
 /.build/
 *.swp
-
-
+/inc/size
+/inc/zig-cache
+/share/types.pl
