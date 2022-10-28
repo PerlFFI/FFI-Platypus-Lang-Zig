@@ -37,9 +37,19 @@ print add(1,2), "\n";  # prints 3
 
 # DESCRIPTION
 
+This module provides native Zig types for FFI::Platypus in order to
+reduce cognitive load and concentrate on Zig and forget about C types.
+This document also covers using Platypus with Zig, and includes a
+number of examples.
+
+Note that in addition to using pre-compiled Zig libraries, you can
+bundle Zig code with your Perl distribution using [FFI::Build](https://metacpan.org/pod/FFI::Build) and
+[FFI::Build::File::Zig](https://metacpan.org/pod/FFI::Build::File::Zig).
+
 # EXAMPLES
 
-The examples in this discussion are bundled with this distribution and can be found in the `examples` directory.
+The examples in this discussion are bundled with this distribution and
+can be found in the `examples` directory.
 
 ## Passing and Returning Integers
 
@@ -99,6 +109,10 @@ my $hashref = FFI::Platypus::Lang::Zig->native_type_map;
 This returns a hash reference containing the native aliases for the
 Zig programming languages. That is the keys are native Zig types
 and the values are libffi native types.
+
+# CAVEATS
+
+Only one example so far!  Hopefully more to come soon.
 
 # SEE ALSO
 
