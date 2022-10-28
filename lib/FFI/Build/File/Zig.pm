@@ -101,7 +101,7 @@ Edit build.zig, and edit the line C<b.addStaticLibrary> to look like this:
 
  const lib = b.addSharedLibrary("ffi", "src/main.zig", b.version(0,0,1));
 
-Add Zig code to C<src/main.zig> that you want to call from Perl:
+Add Zig code to C<ffi/src/main.zig> that you want to call from Perl:
 
  export fn add(a: i32, b: i32) callconv(.C) i32 {
      return a + b;
