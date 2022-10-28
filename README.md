@@ -94,6 +94,17 @@ $ perl add.pl
 
 ### Notes
 
+Basic types like integers and floating points are the easiest to pass
+across the FFI boundary.  The Platypus Zig language plugin (this module)
+provides the basic types used by Zig (for example: `bool`, `i32`, `u64`,
+`f64`, `isize` and others) will all work as a Zig programmer would expect.
+This is nice because you don't have to think about what the equivalent types
+would be in C when you are writing your Perl extension in Zig.
+
+Zig functions do not use the same ABI as C by default, so if you want
+to be able to call Zig functions from Perl they need to be declared
+with the C calling convention `callconv(.C)` as in this example.
+
 # METHODS
 
 Generally you will not use this class directly, instead interacting
