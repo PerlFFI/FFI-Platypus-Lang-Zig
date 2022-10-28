@@ -61,9 +61,19 @@ Perl:
 
 =head1 DESCRIPTION
 
+This module provides native Zig types for FFI::Platypus in order to
+reduce cognitive load and concentrate on Zig and forget about C types.
+This document also covers using Platypus with Zig, and includes a
+number of examples.
+
+Note that in addition to using pre-compiled Zig libraries, you can
+bundle Zig code with your Perl distribution using L<FFI::Build> and
+L<FFI::Build::File::Zig>.
+
 =head1 EXAMPLES
 
-The examples in this discussion are bundled with this distribution and can be found in the C<examples> directory.
+The examples in this discussion are bundled with this distribution and
+can be found in the C<examples> directory.
 
 =head2 Passing and Returning Integers
 
@@ -96,6 +106,10 @@ Platypus are documented here.
 This returns a hash reference containing the native aliases for the
 Zig programming languages. That is the keys are native Zig types
 and the values are libffi native types.
+
+=head1 CAVEATS
+
+Only one example so far!  Hopefully more to come soon.
 
 =head1 SEE ALSO
 
