@@ -4,9 +4,85 @@ Documentation and tools for using Platypus with the Zig programming language
 
 # SYNOPSIS
 
+Zig:
+
+```
+const std = @import("std");
+
+export fn add(a: i32, b: i32) callconv(.C) i32 {
+    return a + b;
+}
+```
+
+Perl:
+
+```perl
+use FFI::Platypus 2.00;
+use FFI::CheckLib qw( find_lib_or_die );
+use File::Basename qw( dirname );
+
+my $ffi = FFI::Platypus->new( api => 2, lang => 'Zig' );
+$ffi->lib(
+  find_lib_or_die(
+    lib        => 'add',
+    libpath    => [dirname __FILE__],
+    systempath => [],
+  )
+);
+
+$ffi->attach( add => ['i32','i32'] => 'i32' );
+
+print add(1,2), "\n";  # prints 3
+```
+
 # DESCRIPTION
 
 # EXAMPLES
+
+The examples in this discussion are bundled with this distribution and can be found in the `examples` directory.
+
+## Passing and Returning Integers
+
+### Zig Source
+
+```
+const std = @import("std");
+
+export fn add(a: i32, b: i32) callconv(.C) i32 {
+    return a + b;
+}
+```
+
+### Perl Source
+
+```perl
+use FFI::Platypus 2.00;
+use FFI::CheckLib qw( find_lib_or_die );
+use File::Basename qw( dirname );
+
+my $ffi = FFI::Platypus->new( api => 2, lang => 'Zig' );
+$ffi->lib(
+  find_lib_or_die(
+    lib        => 'add',
+    libpath    => [dirname __FILE__],
+    systempath => [],
+  )
+);
+
+$ffi->attach( add => ['i32','i32'] => 'i32' );
+
+print add(1,2), "\n";  # prints 3
+```
+
+### Execute
+
+```
+$ zig build-lib -dynamic add.zig
+$ perl add.pl
+3
+```
+
+### Notes
 
 # METHODS
 

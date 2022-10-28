@@ -92,7 +92,7 @@ From your perl project root:
 
  $ mkdir ffi
  $ cd ffi
- $ zig init-lib 
+ $ zig init-lib
  info: Created build.zig
  info: Created src/main.zig
  info: Next, try `zig build --help` or `zig build test`
@@ -112,12 +112,12 @@ Your Perl bindings go in a C<.pm> file like C<lib/MyLib.pm>:
  package MyLib;
  
  use FFI::Platypus 2.00;
-
+ 
  my $ffi = FFI::Platypus( api => 2, lang => 'Zig' );
  $ffi->bundle;
-
+ 
  $ffi->attach( 'add' => ['i32','i32'] => 'i32' );
-
+ 
  1;
 
 Your C<Makefile.PL>:
@@ -156,9 +156,9 @@ Write a test:
 
  use Test2::V0;
  use MyLib;
-
+ 
  is MyLib::add(1,2), 3;
-
+ 
  done_testing;
 
 =head1 DESCRIPTION

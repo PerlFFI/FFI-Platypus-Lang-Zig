@@ -4,3 +4,9 @@ FFI-Platypus-Lang-Zig-*
 /inc/size
 /inc/zig-cache
 /share/types.pl
+*.so
+*.dll
+*.o
+*.bundle
+*.dylib
+/examples/zig-cache

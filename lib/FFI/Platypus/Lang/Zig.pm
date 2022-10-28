@@ -32,7 +32,7 @@ sub native_type_map
       anyopaque => 'opaque',
     );
 
-    # computed at installtime: 
+    # computed at installtime:
     # isize, usize, c_short c_ushort c_int c_uint
     # c_longlong c_ulonglong c_longdouble bool
 
@@ -51,9 +51,37 @@ sub native_type_map
 
 =head1 SYNOPSIS
 
+Zig:
+
+# EXAMPLE: examples/add.zig
+
+Perl:
+
+# EXAMPLE: examples/add.pl
+
 =head1 DESCRIPTION
 
 =head1 EXAMPLES
+
+The examples in this discussion are bundled with this distribution and can be found in the C<examples> directory.
+
+=head2 Passing and Returning Integers
+
+=head3 Zig Source
+
+# EXAMPLE: examples/add.zig
+
+=head3 Perl Source
+
+# EXAMPLE: examples/add.pl
+
+=head3 Execute
+
+ $ zig build-lib -dynamic add.zig
+ $ perl add.pl
+ 3
+
+=head3 Notes
 
 =head1 METHODS
 
