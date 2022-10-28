@@ -12,12 +12,17 @@ my $post_diag;
 $modules{$_} = $_ for qw(
   Capture::Tiny
   ExtUtils::MakeMaker
+  FFI::Build
+  FFI::Build::File::Base
+  FFI::CheckLib
+  FFI::Platypus
   File::ShareDir::Dist
   File::ShareDir::Install
   File::Which
   File::chdir
   Path::Tiny
   Test2::V0
+  parent
 );
 
 
