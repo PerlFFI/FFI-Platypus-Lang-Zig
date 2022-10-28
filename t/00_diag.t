@@ -22,6 +22,7 @@ $modules{$_} = $_ for qw(
   File::chdir
   Path::Tiny
   Test2::V0
+  Test::Script
   parent
 );
 
