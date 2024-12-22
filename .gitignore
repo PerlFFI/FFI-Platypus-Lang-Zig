@@ -10,3 +10,7 @@ FFI-Platypus-Lang-Zig-*
 *.bundle
 *.dylib
 /examples/zig-cache
+/FFI-Platypus-Lang-Zig-*
+/.build
+*.old
+*.orig
