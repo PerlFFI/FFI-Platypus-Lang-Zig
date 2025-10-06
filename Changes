@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - updated for zig version 0.15.1
 
 0.01      2022-10-27 22:02:16 -0600
   - initial version
