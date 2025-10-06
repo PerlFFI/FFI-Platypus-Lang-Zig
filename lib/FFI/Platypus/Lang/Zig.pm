@@ -9,8 +9,7 @@ use 5.020;
 # ABSTRACT: Documentation and tools for using Platypus with the Zig programming language
 # VERSION
 
-sub native_type_map
-{
+sub native_type_map {
   state $map = do {
     my %map = (
       u8        => 'uint8',
