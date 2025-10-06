@@ -7,7 +7,7 @@ Documentation and tools for using Platypus with the Zig programming language
 Zig:
 
 ```
-export fn add(a: i32, b: i32) callconv(.C) i32 {
+pub export fn add(a: i32, b: i32) i32 {
     return a + b;
 }
 ```
@@ -54,7 +54,7 @@ can be found in the `examples` directory.
 ### Zig Source
 
 ```
-export fn add(a: i32, b: i32) callconv(.C) i32 {
+pub export fn add(a: i32, b: i32) i32 {
     return a + b;
 }
 ```
