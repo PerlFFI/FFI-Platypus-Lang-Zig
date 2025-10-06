@@ -2,12 +2,13 @@ package FFI::Build::File::Zig;
 
 use strict;
 use warnings;
-use 5.008004;
+use 5.020;
 use parent qw( FFI::Build::File::Base );
 use FFI::CheckLib 0.11 qw( find_lib_or_die );
 use Path::Tiny ();
 use File::chdir;
 use File::Copy qw( copy );
+use experimental qw( signatures );
 
 # ABSTRACT: Documentation and tools for using Platypus with the Zig programming language
 # VERSION
@@ -17,16 +18,13 @@ sub accept_suffix
   (qr/\/build.zig$/)
 }
 
-sub build_all
+sub build_all ($self)
 {
-  my($self) = @_;
   $self->build_item;
 }
 
-sub build_item
+sub build_item ($self)
 {
-  my($self) = @_;
-
   my $build_zig = Path::Tiny->new($self->path);
 
   my $lib = $self->build ? $self->build->file : die 'todo';
@@ -70,10 +68,8 @@ sub build_item
   $lib;
 }
 
-sub _deps
+sub _deps ($self, $path)
 {
-  my($self, $path) = @_;
-
   my @list;
 
   foreach my $path ($path->child('src')->children)

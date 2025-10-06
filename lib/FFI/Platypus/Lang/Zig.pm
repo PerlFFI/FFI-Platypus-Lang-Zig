@@ -2,18 +2,16 @@ package FFI::Platypus::Lang::Zig;
 
 use strict;
 use warnings;
+use feature qw( state );
 use File::ShareDir::Dist qw( dist_share );
-use 5.008004;
+use 5.020;
 
 # ABSTRACT: Documentation and tools for using Platypus with the Zig programming language
 # VERSION
 
-my $map;
-
 sub native_type_map
 {
-  unless($map)
-  {
+  state $map = do {
     my %map = (
       u8        => 'uint8',
       u16       => 'uint16',
@@ -41,8 +39,8 @@ sub native_type_map
 
     %map = (%map, %$map2);
 
-    $map = \%map;
-  }
+    \%map;
+  };
 
   $map;
 }
