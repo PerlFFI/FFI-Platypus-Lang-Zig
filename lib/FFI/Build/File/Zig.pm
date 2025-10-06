@@ -13,18 +13,15 @@ use experimental qw( signatures );
 # ABSTRACT: Documentation and tools for using Platypus with the Zig programming language
 # VERSION
 
-sub accept_suffix
-{
+sub accept_suffix {
   (qr/\/build.zig$/)
 }
 
-sub build_all ($self)
-{
+sub build_all ($self) {
   $self->build_item;
 }
 
-sub build_item ($self)
-{
+sub build_item ($self) {
   my $build_zig = Path::Tiny->new($self->path);
 
   my $lib = $self->build ? $self->build->file : die 'todo';
@@ -68,12 +65,10 @@ sub build_item ($self)
   $lib;
 }
 
-sub _deps ($self, $path)
-{
+sub _deps ($self, $path) {
   my @list;
 
-  foreach my $path ($path->child('src')->children)
-  {
+  foreach my $path ($path->child('src')->children) {
     next if -d $path;
     next unless $path->basename =~ /\.zig$/;
     push @list, $path;
