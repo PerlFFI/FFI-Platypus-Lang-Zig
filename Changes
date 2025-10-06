@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.02      2025-10-05 22:50:15 -0600
   - updated for zig version 0.15.1
   - drop support for Perls prior to 5.20
 
